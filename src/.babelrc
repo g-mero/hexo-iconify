@@ -1,0 +1,14 @@
+{
+  "presets": [
+    [
+      "@babel/env",
+      {
+        "modules": false
+        // 下面是两行polyfill，会根据项目浏览器支持自动引入, 可以注释掉关闭
+        // "useBuiltIns": "usage",
+        // "corejs": 3
+      }
+    ],
+    "@babel/typescript"
+  ]
+}
