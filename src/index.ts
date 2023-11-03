@@ -1,6 +1,31 @@
-import getIcon from './modules/icon'
+import { getIcon, getIconClass, saveIcons } from './modules/icon'
 
 hexo.extend.helper.register('icon', function (iconName: string) {
   const iconHTML = getIcon(iconName)
   return iconHTML
+})
+
+hexo.extend.helper.register(
+  'icons',
+  function (iconName: string, fileName?: string) {
+    return getIconClass(iconName, fileName)
+  },
+)
+
+hexo.extend.filter.register('after_render:css', function (str, data) {
+  let defaultFile = 'icons.css'
+
+  if (hexo.config.iconify?.file) {
+    defaultFile = hexo.config.iconify.file
+  }
+
+  saveIcons.forEach((value, key) => {
+    const fileName = value.file || defaultFile
+    if (data.path.includes(fileName)) {
+      hexo.log.info(`iconify: 写入图标 ${key} 到 ${fileName}`)
+      str += `.${key}{--svg:url("${value.data}");}`
+    }
+  })
+
+  return str
 })
