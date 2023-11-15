@@ -12,6 +12,12 @@ hexo.extend.helper.register(
   },
 )
 
+hexo.extend.tag.register('icon', function (args) {
+  const iconName = args[0]
+  const iconHTML = getIcon(iconName)
+  return iconHTML
+})
+
 hexo.extend.filter.register('after_render:css', function (str, data) {
   let defaultFile = 'icons.css'
 
