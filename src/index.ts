@@ -21,8 +21,14 @@ hexo.extend.tag.register('icon', function (args) {
 hexo.extend.filter.register('after_render:css', function (str, data) {
   let defaultFile = 'icons.css'
 
+  // 使用配置文件中的文件名
   if (hexo.config.iconify?.file) {
     defaultFile = hexo.config.iconify.file
+  }
+
+  // 优先使用主题配置文件中的文件名
+  if (hexo.theme.config.iconify?.file) {
+    defaultFile = hexo.theme.config.iconify.file
   }
 
   saveIcons.forEach((value, key) => {
