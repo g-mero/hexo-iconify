@@ -1,6 +1,6 @@
 {
   "name": "hexo-iconify",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "hexo iconify plugin",
   "main": "dist/hexo-iconify.js",
   "files": [
@@ -19,24 +19,24 @@
   "author": "Gmero <gmerocom@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "@babel/core": "^7.23.3",
-    "@babel/preset-env": "^7.23.3",
+    "@babel/core": "^7.24.0",
+    "@babel/preset-env": "^7.24.0",
     "@babel/preset-typescript": "^7.23.3",
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-commonjs": "^25.0.7",
-    "@rollup/plugin-json": "^6.0.1",
+    "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-terser": "^0.4.4",
-    "@types/hexo": "^3.8.11",
+    "@types/hexo": "^3.8.12",
     "@xbmlz/eslint-config-prettier": "^0.1.17",
     "@xbmlz/eslint-config-ts": "^0.1.17",
-    "eslint": "^8.53.0",
+    "eslint": "^8.57.0",
     "rollup": "^3.29.4",
-    "typescript": "^5.2.2"
+    "typescript": "^5.3.3"
   },
   "dependencies": {
-    "@iconify/json": "^2.2.142",
-    "@iconify/utils": "^2.1.11",
+    "@iconify/json": "^2.2.188",
+    "@iconify/utils": "^2.1.22",
     "hexo-fs": "^4.1.1"
   }
 }
